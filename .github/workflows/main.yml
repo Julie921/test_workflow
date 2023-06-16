@@ -8,6 +8,8 @@ on:
     - cron: 0 1 * * MON
 
 permissions: read-all
+
+jobs:
   build:
     strategy:
       fail-fast: false
@@ -17,7 +19,7 @@ permissions: read-all
         ocaml-compiler:
           - "5.0"
 
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
 
     steps:
       - name: Checkout tree

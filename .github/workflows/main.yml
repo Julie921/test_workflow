@@ -32,6 +32,11 @@ jobs:
           ocaml-compiler: ${{ matrix.ocaml-compiler }}
 
       - run: opam install . --deps-only --with-test
+      
+      - run: opam exec -- dune build
+
+      - run: opam exec -- dune runtest
+      
       - run: opam init
       
       - run: opam switch create 4.14.1 4.14.1
@@ -48,9 +53,7 @@ jobs:
       
       - run: opam install grewpy_backend
       
-      - run: opam exec -- dune build
 
-      - run: opam exec -- dune runtest
       
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v4

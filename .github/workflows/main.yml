@@ -25,15 +25,12 @@ jobs:
       - name: Checkout tree
         uses: actions/checkout@v3
         
-      - name: Set-up OCaml 4.14
+      - name: Set-up OCaml ${{ matrix.ocaml-compiler }}
         uses: ocaml/setup-ocaml@v2
         with:
-          ocaml-compiler: 4.14
-          dune-cache: true
+          ocaml-compiler: ${{ matrix.ocaml-compiler }}
 
-      - name: Lint opam
-        uses: ocaml/setup-ocaml/lint-opam@v2
-      
+      - run: opam install . --deps-only --with-test
       - run: opam init
       
       - run: opam switch create 4.14.1 4.14.1

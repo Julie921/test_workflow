@@ -19,7 +19,7 @@ jobs:
         ocaml-compiler:
           - "5.0"
 
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout tree

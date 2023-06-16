@@ -30,4 +30,8 @@ jobs:
         with:
           ocaml-compiler: ${{ matrix.ocaml-compiler }}
       
+      - run: opam init
+      
+      - run: opam switch create 4.14.1 4.14.1
+      
       - run: opam install grew

@@ -46,6 +46,8 @@ jobs:
       - run: opam install grew
       
       - run: opam upgrade grew
+      - run: opam install libcaml-dep2pict fileutils
+      - run: opam install libcaml-grew
       
       - run: opam install grewpy_backend
       

@@ -16,7 +16,7 @@ jobs:
       matrix:
         os:
           - ubuntu-latest
-        python-version: ["3.7", "3.8", "3.9", "3.10", "3.11"]
+        python-version: ["3.10", "3.11"]
         ocaml-compiler:
           - "5.0"
 
@@ -41,6 +41,8 @@ jobs:
       - run: opam remote add grew "http://opam.grew.fr"
       
       - run: opam install grew
+      
+      - run: opam update
       
       - run: opam install grewpy_backend --verbose
       

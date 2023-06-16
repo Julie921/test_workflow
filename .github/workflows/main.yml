@@ -30,6 +30,7 @@ jobs:
         uses: ocaml/setup-ocaml@v2
         with:
           ocaml-compiler: ${{ matrix.ocaml-compiler }}
+    
       
       - run: opam init
       
@@ -41,7 +42,7 @@ jobs:
       
       - run: opam install grew
       
-      - run: opam install grewpy_backend
+      - run: opam install grewpy_backend --verbose
       
       - run: opam exec -- dune build
 

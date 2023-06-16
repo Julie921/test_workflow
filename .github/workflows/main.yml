@@ -25,7 +25,11 @@ jobs:
     steps:
       - name: Checkout tree
         uses: actions/checkout@v3
-    
+        
+      - name: Set-up OCaml ${{ matrix.opam }}
+        uses: ocaml/setup-ocaml@v2
+        with:
+          opam: ${{ matrix.opam }}
       
       - run: opam init
       

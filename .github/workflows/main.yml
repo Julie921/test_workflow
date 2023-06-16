@@ -36,7 +36,9 @@ jobs:
       
       - run: opam switch create 4.14.1 4.14.1
       
-      - run: eval $(opam env --switch=4.14.1)
+      - run: opam switch 4.14.1
+      
+      - run: eval $(opam env)
       
       - run: opam remote add grew "http://opam.grew.fr"
       
@@ -44,7 +46,7 @@ jobs:
       
       - run: opam update
       
-      - run: opam install grewpy_backend --verbose
+      - run: opam install grewpy_backend
       
       - run: opam exec -- dune build
 

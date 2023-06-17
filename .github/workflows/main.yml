@@ -32,7 +32,7 @@ jobs:
           ocaml-compiler: ${{ matrix.ocaml-compiler }}
           
       - name: other pack
-        run: apt-get install wget m4 unzip librsvg2-bin curl bubblewrap
+        run: sudo apt-get install wget m4 unzip librsvg2-bin curl bubblewrap
       
       - run: opam init
       

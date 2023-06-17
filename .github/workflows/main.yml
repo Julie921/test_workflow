@@ -41,9 +41,9 @@ jobs:
       
       - run: opam update
       
-      - run: opam install grew
+      - run: opam install grew -y
       
-      - run: opam upgrade grew
+      - run: opam upgrade grew -y
       
       - run: opam install grewpy_backend
       

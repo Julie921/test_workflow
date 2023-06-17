@@ -18,6 +18,7 @@ jobs:
           - ubuntu-latest
         ocaml-compiler:
           - "5.0"
+        python-version: ["3.10", "3.11"]
 
     runs-on: ${{ matrix.os }}
 
@@ -41,9 +42,9 @@ jobs:
       
       - run: opam update
       
-      - run: opam install grew -y
+      - run: opam install -y grew 
       
-      - run: opam upgrade grew -y
+      - run: opam upgrade -y grew 
       
       - run: opam install grewpy_backend
       

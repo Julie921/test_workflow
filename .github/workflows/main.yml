@@ -46,7 +46,7 @@ jobs:
       
       - run: opam upgrade -y grew 
       
-      - run: opam install grewpy_backend
+      - run: opam install -y grewpy_backend
       
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v4

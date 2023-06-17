@@ -30,6 +30,9 @@ jobs:
         uses: ocaml/setup-ocaml@v2.0.16
         with:
           ocaml-compiler: ${{ matrix.ocaml-compiler }}
+          
+      - name: other pack
+        run: apt-get install wget m4 unzip librsvg2-bin curl bubblewrap
       
       - run: opam init
       
